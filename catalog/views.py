@@ -29,6 +29,7 @@ def get_artist(request: Request, pk: int) -> Response:
     serializer = ArtistSerializer(artist)
     return Response(serializer.data)
 
+#Album
 #liste des albums
 @api_view(['GET'])
 def album_list(request: Request) -> Response:
@@ -48,7 +49,7 @@ def get_album(request: Request, pk: int) -> Response:
     serializer = AlbumSerializer(album)
     return Response(serializer.data)
 
-
+#Track
 #Recuperer la liste de chanson par auteur
 @api_view(['GET'])
 def track_list_by_artist(request: Request, artist_id: int) -> Response:
