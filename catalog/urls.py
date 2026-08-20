@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import album_list, artist_list, get_album, get_artist
+from .views import album_list, artist_list, get_album, get_artist, track_list_by_artist, track_list_by_album
 
 """
 urlpatterns = [
@@ -16,4 +16,7 @@ urlpatterns = [
     path('artists/<int:pk>/', get_artist, name='artist-detail'),
     path('albums/', album_list, name='album-list'),
     path('albums/<int:pk>/', get_album, name='album-detail'),
+    path('tracks/artist/<int:artist_id>/', track_list_by_artist, name='track-list'),
+    path('tracks/album/<int:album_id>/', track_list_by_album, name='track-list'),
+
 ]
