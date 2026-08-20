@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import artist_list
+from .views import artist_list, get_artist
 
 """
 urlpatterns = [
@@ -13,4 +13,6 @@ urlpatterns = [
 
 urlpatterns = [
     path('artists/', artist_list, name='artist-list'),
+    path('artists/<int:pk>/', get_artist, name='artist-detail'),
+    
 ]

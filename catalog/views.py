@@ -16,3 +16,14 @@ def artist_list(request: Request) -> Response:
     artists = Artist.objects.all()
     serializer = ArtistSerializer(artists, many=True)
     return Response(serializer.data)
+
+#Recuperer un seul artiste
+@api_view(['GET'])
+def get_artist(request: Request, pk: int) -> Response:
+    try:
+        artist = Artist.objects.get(pk=pk)
+    except Artist.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ArtistSerializer(artist)
+    return Response(serializer.data)
