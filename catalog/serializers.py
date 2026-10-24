@@ -16,7 +16,7 @@ class ArtistSerializer(serializers.ModelSerializer):
 class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
-        fields = ['id', 'title', 'artist', 'release_date', 'cover_url']
+        fields = ['id', 'title', 'artist', 'release_date']
 
     def create(self, validated_data):
         return Album.objects.create(**validated_data)
@@ -24,7 +24,7 @@ class AlbumSerializer(serializers.ModelSerializer):
 class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
-        fields = ['id', 'title', 'album', 'artist', 'duration', 'file_url']
+        fields = ['id', 'title', 'album', 'artist', 'duration', 'file_url', 'cover_image']
 
     def create(self, validated_data):
         return Track.objects.create(**validated_data)
