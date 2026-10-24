@@ -11,6 +11,7 @@ from .serializers import ArtistSerializer, AlbumSerializer, TrackSerializer
 # CRUD Artist: mais pour l'instant on va juste faire une lecture et une modification de l'artiste
 
 #Petit commit de test
+#second commit de test
 #recuperer la liste des artistes
 @api_view(['GET'])
 def artist_list(request: Request) -> Response:
