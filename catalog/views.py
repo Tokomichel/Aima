@@ -8,7 +8,7 @@ from .serializers import ArtistSerializer, AlbumSerializer, TrackSerializer
 
 # Create your views here.
 
-# CRUD Artist: mais pour l'intant on va juste faire une lecture et une modification de l'artiste
+# CRUD Artist: mais pour l'instant on va juste faire une lecture et une modification de l'artiste
 
 #recuperer la liste des artistes
 @api_view(['GET'])

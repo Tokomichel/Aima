@@ -26,7 +26,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#gtwzjlvu1k)1vdn(bew2-pceis(bq9cg1$mvwz8k#sb7=(%%k'
 
 #My own settings
+# minio settings
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+        "OPTIONS": {
+            "access_key": os.getenv("MINIO_ACCESS_KEY"),
+            "secret_key": os.getenv("MINIO_SECRET_KEY"),
+            "bucket_name": os.getenv("MINIO_BUCKET_NAME"),
+            "endpoint_url": os.getenv("MINIO_ENDPOINT"),
+            "region_name": "us-east-1",
+            "default_acl": None,
+            "addressing_style": "path",
+        },
+    },
 
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

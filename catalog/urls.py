@@ -18,5 +18,4 @@ urlpatterns = [
     path('albums/<int:pk>/', get_album, name='album-detail'),
     path('tracks/artist/<int:artist_id>/', track_list_by_artist, name='track-list'),
     path('tracks/album/<int:album_id>/', track_list_by_album, name='track-list'),
-
 ]
