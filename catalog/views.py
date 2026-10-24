@@ -12,6 +12,7 @@ from .serializers import ArtistSerializer, AlbumSerializer, TrackSerializer
 
 #Petit commit de test
 #second commit de test
+#troisieme test
 #recuperer la liste des artistes
 @api_view(['GET'])
 def artist_list(request: Request) -> Response:
